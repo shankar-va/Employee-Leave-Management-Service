@@ -20,7 +20,7 @@ public class RegisterServlet extends HttpServlet {
 						!(email.equals(null)||email.equals(""))&&
 						!(pswd.equals(null)||pswd.equals("")))&&
 						pswd.equals(confirmPswd);
-		request.getRequestDispatcher("/")
+		request.getRequestDispatcher("/");
 		
 	}
 
