@@ -11,15 +11,19 @@ public class User {
 	public User() {
 		super();
 	}
-	public User(Integer id, String name, String email, String password, String role, String department, String phone) {
+	public User(String name, String email, String password, String role, String department, String phone) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.role = role;
 		this.department = department;
 		this.phone = phone;
+	}
+	public User(Integer id, String uname, String email, String password, String role, String department,
+			String phone) {
+		this(uname, email, password, role, department, phone);
+		this.id=id;
 	}
 	public Integer getId() {
 		return id;

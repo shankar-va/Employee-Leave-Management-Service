@@ -51,10 +51,10 @@ public class LeaveRequest {
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
-	public Date getEnDate() {
+	public Date getEndDate() {
 		return endDate;
 	}
-	public void setEnDate(Date endDate) {
+	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
 	public String getReason() {

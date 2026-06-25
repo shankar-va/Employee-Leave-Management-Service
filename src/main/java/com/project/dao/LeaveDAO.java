@@ -1,6 +1,7 @@
 package com.project.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.project.model.LeaveRequest;
 
@@ -16,7 +17,7 @@ public interface LeaveDAO {
 	boolean approveLeave(Integer leaveId);
 	boolean rejectLeave(Integer leaveId);
 	LeaveRequest searchLeaveRequest(Integer leaveId);
-	List<LeaveRequest> searchByStatus();
-	Integer[] dashBoardCount();
+	List<LeaveRequest> searchByStatus(String status);
+	Map<String, List<LeaveRequest>> dashBoardCount();
 	
 }
