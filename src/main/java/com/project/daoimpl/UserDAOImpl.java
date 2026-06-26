@@ -191,7 +191,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public Integer countEmployees() {
-		String query = "SELECT count(*) FROM users_emp;";
+		String query = "SELECT count(*) FROM users_emp WHERE role='user';";
 		PreparedStatement pstm;
 		ResultSet result = null;
 		try {
@@ -199,6 +199,7 @@ public class UserDAOImpl implements UserDAO {
 			result = pstm.executeQuery();
 			if (!result.next())
 				return null;
+			System.out.println(result.getInt(1));
 			return result.getInt(1);
 		} catch (SQLException e) {
 			e.printStackTrace();

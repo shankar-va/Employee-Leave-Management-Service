@@ -11,6 +11,7 @@ public class LeaveService {
 			"PENDING","APPROVED","REJECTED","CANCELLED"
 	};
 	private final static LeaveDAOImpl leave=new LeaveDAOImpl();
+	
 	public static boolean applyLeave(LeaveRequest request) {
 		if(request.getUserId()==null||request.getLeaveType()==null||
 				request.getStartDate()==null||request.getEndDate()==null

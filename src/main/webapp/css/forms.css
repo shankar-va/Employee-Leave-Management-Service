@@ -1,0 +1,383 @@
+/* ============================================================
+   ELMS – Forms Styling
+   ============================================================ */
+
+.form-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 560px;
+}
+
+.form-container-wide {
+  max-width: 720px;
+}
+
+.form-card {
+  padding: 2.5rem;
+}
+
+.form-card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-card-header .form-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #0EA5E9, #38BDF8);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  color: #fff;
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.4);
+}
+
+.form-card-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.form-card-header p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* ============================================================
+   Floating Labels
+   ============================================================ */
+
+.form-floating-custom {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.form-floating-custom .form-control {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1rem 0.5rem;
+  height: auto;
+  font-size: 0.9rem;
+  transition: var(--transition-base);
+  width: 100%;
+}
+
+.form-floating-custom .form-control:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-sky-light);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+  outline: none;
+  color: var(--text-primary);
+}
+
+.form-floating-custom label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  pointer-events: none;
+  transition: var(--transition-base);
+  background: transparent;
+  padding: 0 4px;
+  z-index: 1;
+}
+
+.form-floating-custom .password-wrapper + .password-strength,
+.form-floating-custom .password-wrapper + .field-error {
+  margin-top: 0.5rem;
+}
+
+.form-floating-custom > label:first-child {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 0.72rem;
+  color: var(--color-sky-light);
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 4px;
+}
+
+.form-floating-custom .password-wrapper .form-control {
+  padding-top: 1rem;
+}
+
+.form-floating-custom .form-control:focus ~ label,
+.form-floating-custom:focus-within label,
+.form-floating-custom .form-control:not(:placeholder-shown) ~ label,
+.form-floating-custom .form-control.has-value ~ label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 0.72rem;
+  color: var(--color-sky-light);
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 4px;
+}
+
+.form-floating-custom select.form-control {
+  padding-top: 1.1rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394A3B8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+.form-floating-custom select.form-control option {
+  background: #1E3A8A;
+  color: #fff;
+}
+
+/* ============================================================
+   Standard Form Groups
+   ============================================================ */
+
+.form-group-custom {
+  margin-bottom: 1.25rem;
+}
+
+.form-group-custom label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.form-group-custom .form-control,
+.form-group-custom .form-select,
+.form-group-custom textarea {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  width: 100%;
+  transition: var(--transition-base);
+}
+
+.form-group-custom .form-control:focus,
+.form-group-custom .form-select:focus,
+.form-group-custom textarea:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-sky-light);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+  outline: none;
+  color: var(--text-primary);
+}
+
+.form-group-custom .form-select option {
+  background: #1E3A8A;
+  color: #fff;
+}
+
+.form-group-custom textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ============================================================
+   Password Field with Toggle
+   ============================================================ */
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper .form-control {
+  padding-right: 3rem !important;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  font-size: 1rem;
+  transition: var(--transition-fast);
+  z-index: 2;
+}
+
+.password-toggle:hover {
+  color: var(--color-sky-light);
+}
+
+/* ============================================================
+   Password Strength Meter
+   ============================================================ */
+
+.password-strength {
+  margin-top: 0.5rem;
+}
+
+.strength-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 0.35rem;
+}
+
+.strength-fill {
+  height: 100%;
+  border-radius: 50px;
+  width: 0;
+  transition: width 0.4s ease, background 0.4s ease;
+}
+
+.strength-fill.weak      { width: 25%;  background: #F87171; }
+.strength-fill.fair      { width: 50%;  background: #FCD34D; }
+.strength-fill.good      { width: 75%;  background: #38BDF8; }
+.strength-fill.strong    { width: 100%; background: #4ADE80; }
+
+.strength-text {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   Character Counter
+   ============================================================ */
+
+.char-counter {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+}
+
+.char-counter.warning { color: #FCD34D; }
+.char-counter.danger  { color: #F87171; }
+
+/* ============================================================
+   Validation Messages
+   ============================================================ */
+
+.alert-glass {
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.alert-glass-danger {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #FCA5A5;
+}
+
+.alert-glass-success {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #86EFAC;
+}
+
+.alert-glass-info {
+  background: rgba(14, 165, 233, 0.15);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  color: #7DD3FC;
+}
+
+.field-error {
+  font-size: 0.75rem;
+  color: #F87171;
+  margin-top: 0.35rem;
+  display: none;
+}
+
+.field-error.visible {
+  display: block;
+}
+
+.form-control.is-invalid {
+  border-color: rgba(239, 68, 68, 0.6) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+/* ============================================================
+   Form Actions
+   ============================================================ */
+
+.form-actions {
+  margin-top: 1.75rem;
+}
+
+.form-actions .btn-glass {
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+}
+
+.form-footer-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.form-footer-link a {
+  color: var(--color-sky-light);
+  font-weight: 600;
+}
+
+.form-footer-link a:hover {
+  color: #7DD3FC;
+}
+
+/* ============================================================
+   Date Inputs
+   ============================================================ */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.7);
+  cursor: pointer;
+}
+
+/* ============================================================
+   Two Column Form Grid
+   ============================================================ */
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1.25rem;
+}
+
+@media (max-width: 575.98px) {
+  .form-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

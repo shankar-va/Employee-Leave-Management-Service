@@ -37,7 +37,12 @@ public class ApplyLeaveServlet extends HttpServlet {
 	    Date endDate=java.sql.Date.valueOf(request.getParameter("endDate"));
 	    String reason= request.getParameter("reason");
 	    LeaveRequest leave=new LeaveRequest(id,leaveType,startDate,endDate,reason);
-	    if(LeaveService.applyLeave(leave)) {
+	    System.out.println(leave);
+	    boolean result = LeaveService.applyLeave(leave);
+	    System.out.println("Result = " + result);
+
+	    
+	    if(result) {
 	    	session.setAttribute("success", "Leave applied successfully.");
 	    	response.sendRedirect(contextPath+"/myLeaves");
 	    	return;

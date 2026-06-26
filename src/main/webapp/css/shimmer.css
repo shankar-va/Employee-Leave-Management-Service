@@ -1,0 +1,222 @@
+/* ============================================================
+   ELMS – Shimmer / Skeleton Loading UI
+   ============================================================ */
+
+.shimmer-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10050;
+  background: linear-gradient(135deg, #0F172A, #1E3A8A, #0EA5E9);
+  overflow: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.shimmer-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.elms-submitting #pageContent {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.elms-submitting .shimmer-screen {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.shimmer-block {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.14) 50%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerWave 1.4s ease-in-out infinite;
+  border-radius: 10px;
+}
+
+@keyframes shimmerWave {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.page-content-wrapper {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
+}
+
+.page-content-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Auth shimmer (login / register) ---- */
+.shimmer-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.shimmer-auth-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+.shimmer-auth-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  margin: 0 auto 1.5rem;
+}
+
+.shimmer-auth-title {
+  height: 28px;
+  width: 70%;
+  margin: 0 auto 0.75rem;
+}
+
+.shimmer-auth-sub {
+  height: 14px;
+  width: 85%;
+  margin: 0 auto 2rem;
+}
+
+.shimmer-auth-field {
+  height: 48px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.shimmer-auth-btn {
+  height: 48px;
+  width: 100%;
+  margin-top: 0.5rem;
+  border-radius: 10px;
+}
+
+/* ---- Dashboard shimmer ---- */
+.shimmer-dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.shimmer-sidebar {
+  width: 260px;
+  padding: 1.5rem 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.shimmer-sidebar-brand {
+  height: 42px;
+  width: 80%;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+.shimmer-sidebar-link {
+  height: 40px;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+}
+
+.shimmer-main {
+  flex: 1;
+  padding: 1.75rem;
+}
+
+.shimmer-navbar {
+  height: 70px;
+  width: 100%;
+  margin-bottom: 1.75rem;
+  border-radius: 12px;
+}
+
+.shimmer-stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.shimmer-stat-card {
+  height: 130px;
+  border-radius: 16px;
+}
+
+.shimmer-table-block {
+  height: 320px;
+  border-radius: 16px;
+}
+
+/* ---- Form shimmer ---- */
+.shimmer-form-wrap {
+  display: flex;
+  min-height: 100vh;
+}
+
+.shimmer-form-main {
+  flex: 1;
+  padding: 1.75rem;
+}
+
+.shimmer-form-card {
+  max-width: 720px;
+  margin: 2rem auto 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+}
+
+.shimmer-form-field {
+  height: 48px;
+  margin-bottom: 1.25rem;
+}
+
+.shimmer-form-textarea {
+  height: 120px;
+  margin-bottom: 1.25rem;
+}
+
+/* ---- Table page shimmer ---- */
+.shimmer-table-wrap {
+  display: flex;
+  min-height: 100vh;
+}
+
+.shimmer-filter-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.shimmer-filter {
+  height: 42px;
+  flex: 1;
+  border-radius: 10px;
+}
+
+.shimmer-filter-sm {
+  width: 150px;
+  flex: none;
+}
+
+@media (max-width: 991.98px) {
+  .shimmer-sidebar {
+    display: none;
+  }
+}

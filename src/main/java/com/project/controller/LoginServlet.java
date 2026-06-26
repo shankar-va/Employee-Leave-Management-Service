@@ -27,10 +27,12 @@ public class LoginServlet extends HttpServlet {
 		}
 		HttpSession session=request.getSession();
 		if(user.getRole().equalsIgnoreCase("admin")) {
+			session.setMaxInactiveInterval(1*60*60*24);
 			session.setAttribute("user", user);
 			response.sendRedirect("admin.jsp");
 		}
 		else if(user.getRole().equalsIgnoreCase("user")){
+			session.setMaxInactiveInterval(1*60*60*24);
 			session.setAttribute("user", user);
 			response.sendRedirect("user.jsp");
 		}
