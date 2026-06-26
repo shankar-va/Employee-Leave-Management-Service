@@ -275,18 +275,14 @@ http://localhost:8080/EmployeeLeaveManagement/
 
 # 📸 Screenshots
 
-Add screenshots here:
 
-```text
-screenshots/
-├── home.png
-├── login.png
-├── register.png
-├── admin-dashboard.png
-├── employee-dashboard.png
-├── apply-leave.png
-├── leave-history.png
-```
+![Home Page](screenshots/home.png)
+![Login Page](screenshots/login.png)
+![Register Page](screenshots/register.png)
+![Admin Dashboard](screenshots/admin-dashboard.png)
+![Employee Dashboard](screenshots/employee-dashboard.png)
+![Apply Leave](screenshots/apply-leave.png)
+![Leave History](screenshots/leave-history.png)
 
 ---
 
