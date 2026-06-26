@@ -1,40 +1,53 @@
 package com.project.controller;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import com.project.model.User;
+import com.project.service.UserService;
 
-/**
- * Servlet implementation class LoginServlet
- */
-@WebServlet("/Login")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String email=((String)request.getParameter("email")).trim();
+		String pswd=((String)request.getParameter("pswd")).trim();
+		User user=UserService.login(email, pswd);
+		RequestDispatcher requestDispatcher=request.getRequestDispatcher("login.jsp");
+		if(user==null) {
+			request.setAttribute("failure", "Invalid email or password");
+			request.setAttribute("email", email);
+			requestDispatcher.forward(request, response);
+			return;
+		}
+		HttpSession session=request.getSession();
+		if(user.getRole().equalsIgnoreCase("admin")) {
+			session.setAttribute("user", user);
+			response.sendRedirect("admin.jsp");
+		}
+		else if(user.getRole().equalsIgnoreCase("user")){
+			session.setAttribute("user", user);
+			response.sendRedirect("user.jsp");
+		}
+		else {
+			request.setAttribute("failure",
+			        "Invalid user role.");
+			requestDispatcher.forward(request, response);
+			return;
+		}
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		RequestDispatcher requestDispatcher=request.getRequestDispatcher("login.jsp");
+		requestDispatcher.forward(request, response);
+		return;
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+	
 
 }

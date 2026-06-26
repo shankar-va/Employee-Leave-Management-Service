@@ -27,6 +27,10 @@ public class LeaveRequest {
 		this.status = status;
 		this.appliedDate = appliedDate;
 	}
+	public LeaveRequest(Integer id, String leaveType,Date startDate,Date endDate,
+			String reason) {
+		this(null, id, leaveType, startDate, endDate, reason, null, null);
+	}
 	public Integer getLeaveId() {
 		return leaveId;
 	}
