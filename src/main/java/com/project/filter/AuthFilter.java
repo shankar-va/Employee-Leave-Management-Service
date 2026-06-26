@@ -26,7 +26,11 @@ public class AuthFilter implements Filter{
 		String uri=httpServletRequest.getRequestURI();
 		String contextPath=httpServletRequest.getContextPath();
 		String actualURI=uri.substring(contextPath.length());
-		if(actualURI.equals("/home")
+		if(actualURI.equals("")
+			||
+			actualURI.equals("/")
+			||
+			actualURI.equals("/home")
 			||
 			actualURI.equals("/home.jsp")
 			||
