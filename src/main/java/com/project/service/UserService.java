@@ -56,7 +56,7 @@ public class UserService {
 		if(id==null)return false;
 		User user=userDAO.getUserById(id);
 		if(user==null)return false;
-		if(!user.getRole().equals("USER"))return false;
+		if(!user.getRole().equalsIgnoreCase("USER"))return false;
 		return userDAO.deleteEmployeeById(id);
 	}
 	/*3) Dashboard: */

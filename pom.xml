@@ -4,22 +4,34 @@
   <artifactId>Employee_Leave_Management_Service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.2.3</version>
-      </plugin>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.13.0</version>
-        <configuration>
-          <release>21</release>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+	 <build>
+	    <plugins>
+	
+	        <plugin>
+	            <artifactId>maven-war-plugin</artifactId>
+	            <version>3.2.3</version>
+	            <configuration>
+	                <failOnMissingWebXml>false</failOnMissingWebXml>
+	            </configuration>
+	        </plugin>
+	
+	        <plugin>
+	            <artifactId>maven-compiler-plugin</artifactId>
+	            <version>3.13.0</version>
+	            <configuration>
+	                <release>21</release>
+	            </configuration>
+	        </plugin>
+	
+	    </plugins>
+	</build>
   <dependencies>
+	  <dependency>
+	        <groupId>jakarta.servlet</groupId>
+	        <artifactId>jakarta.servlet-api</artifactId>
+	        <version>6.0.0</version>
+	        <scope>provided</scope>
+	    </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>

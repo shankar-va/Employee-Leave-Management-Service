@@ -199,7 +199,6 @@ public class UserDAOImpl implements UserDAO {
 			result = pstm.executeQuery();
 			if (!result.next())
 				return null;
-			System.out.println(result.getInt(1));
 			return result.getInt(1);
 		} catch (SQLException e) {
 			e.printStackTrace();
