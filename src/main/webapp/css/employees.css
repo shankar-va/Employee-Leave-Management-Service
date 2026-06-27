@@ -75,3 +75,44 @@
   border-color: rgba(99, 102, 241, 0.4);
   color: #fff;
 }
+
+@media (max-width: 767.98px) {
+  .employee-search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .employee-search-form .form-group-custom {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .employee-search-form .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .employee-search-card {
+    padding: 1.15rem;
+  }
+
+  .search-type-tabs {
+    flex-direction: column;
+  }
+
+  .search-type-tab {
+    width: 100%;
+    text-align: center;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .employee-search-form .form-group-custom[style] {
+    max-width: none !important;
+  }
+}

@@ -331,6 +331,8 @@ body {
 /* ============================================================
    Scrollbar
    ============================================================ */
+
+::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
@@ -425,4 +427,63 @@ a {
 
 a:hover {
   color: #7DD3FC;
+}
+
+/* ============================================================
+   Global Responsive
+   ============================================================ */
+
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 991.98px) {
+  :root {
+    --navbar-height: 64px;
+  }
+
+  .toast-container-custom {
+    top: 16px;
+    right: 16px;
+    left: 16px;
+  }
+
+  .toast-item {
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .btn-glass,
+  .btn-glass-outline {
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .toast-container-custom {
+    top: max(12px, env(safe-area-inset-top));
+    right: 12px;
+    left: 12px;
+  }
+
+  .toast-item {
+    font-size: 0.85rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .badge-status {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.65rem;
+  }
+}
+
+@media (max-width: 399.98px) {
+  body {
+    font-size: 0.9375rem;
+  }
 }

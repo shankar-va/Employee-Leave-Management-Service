@@ -82,4 +82,39 @@
   .home-hero-content h1 {
     font-size: 1.45rem;
   }
+
+  .home-hero {
+    padding: 1.25rem 0.75rem;
+    align-items: flex-start;
+  }
+
+  .home-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .home-actions .btn {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .home-tagline {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 399.98px) {
+  .home-hero-content {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .home-hero-content h1 {
+    font-size: 1.25rem;
+  }
+
+  .home-logo {
+    width: 68px;
+    height: 68px;
+    font-size: 1.85rem;
+  }
 }
